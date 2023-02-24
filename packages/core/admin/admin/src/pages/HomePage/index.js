@@ -8,15 +8,15 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { useHistory } from 'react-router-dom';
-import { LoadingIndicatorPage, useGuidedTour } from '@strapi/helper-plugin';
+import { LoadingIndicatorPage } from '@strapi/helper-plugin';
 import { Layout, Main, Box, Grid, GridItem } from '@strapi/design-system';
 import cornerOrnamentPath from './assets/corner-ornament.svg';
 import { useModels } from '../../hooks';
-import isGuidedTourCompleted from '../../components/GuidedTour/utils/isGuidedTourCompleted';
-import GuidedTourHomepage from '../../components/GuidedTour/Homepage';
-import SocialLinks from './SocialLinks';
+// import isGuidedTourCompleted from '../../components/GuidedTour/utils/isGuidedTourCompleted';
+// import GuidedTourHomepage from '../../components/GuidedTour/Homepage';
+// import SocialLinks from './SocialLinks';
 import HomeHeader from './HomeHeader';
-import ContentBlocks from './ContentBlocks';
+// import ContentBlocks from './ContentBlocks';
 
 const LogoContainer = styled(Box)`
   position: absolute;
@@ -31,10 +31,10 @@ const LogoContainer = styled(Box)`
 const HomePage = () => {
   // Temporary until we develop the menu API
   const { collectionTypes, singleTypes, isLoading: isLoadingForModels } = useModels();
-  const { guidedTourState, isGuidedTourVisible, isSkipped } = useGuidedTour();
+  // const { guidedTourState, isGuidedTourVisible, isSkipped } = useGuidedTour();
 
-  const showGuidedTour =
-    !isGuidedTourCompleted(guidedTourState) && isGuidedTourVisible && !isSkipped;
+  // const showGuidedTour =
+  //   !isGuidedTourCompleted(guidedTourState) && isGuidedTourVisible && !isSkipped;
 
   const { push } = useHistory();
   const handleClick = (e) => {
@@ -73,14 +73,14 @@ const HomePage = () => {
               />
             </GridItem>
           </Grid>
-          <Grid gap={6}>
+          {/* <Grid gap={6}>
             <GridItem col={8} s={12}>
               {showGuidedTour ? <GuidedTourHomepage /> : <ContentBlocks />}
             </GridItem>
             <GridItem col={4} s={12}>
               <SocialLinks />
             </GridItem>
-          </Grid>
+          </Grid> */}
         </Box>
       </Main>
     </Layout>
