@@ -51,11 +51,17 @@ const Login = ({ onSubmit, schema, children }) => {
                   <Typography variant="alpha" as="h1">
                     {formatMessage({
                       id: 'Auth.form.welcome.title',
-                      defaultMessage: 'Welcome!',
+                      defaultMessage: 'Welcome to COG!',
                     })}
                   </Typography>
                 </Box>
                 <Box paddingBottom={7}>
+                  <Typography variant="epsilon" textColor="neutral600">
+                    {formatMessage({
+                      id: 'Auth.form.welcome.subtitle',
+                      defaultMessage: 'Log in to your Strapi account',
+                    })}
+                  </Typography>
                   <Typography variant="epsilon" textColor="neutral600">
                     {formatMessage({
                       id: 'Auth.form.welcome.subtitle',
